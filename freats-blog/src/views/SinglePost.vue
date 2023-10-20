@@ -46,15 +46,17 @@
       </div>
     </nav>
 
-    <div class="main-container">
-      <div class="container single-container">
-        <div class="image-container">
-          <img class="single-image" src="../../public/pilot.jpg" alt="" />
-        </div>
-        <div id="blog-container">
-          <h1 class="single-title">{{ this.post.title }}</h1>
-          <div class="single-author">{{ this.post.author }} &nbsp; {{ this.slashDate2 }}</div>
-          <div class="single-time">{{ this.post.time }} Minute Read</div>
+    <div class="test-container">
+      <div class="main-container">
+        <div class="container single-container">
+          <div class="image-container">
+            <img class="single-image" src="../../public/pilot.jpg" alt="" />
+          </div>
+          <div id="blog-container">
+            <h1 class="single-title">{{ this.post.title }}</h1>
+            <div class="single-author">{{ this.post.author }} &nbsp; {{ this.slashDate2 }}</div>
+            <div class="single-time">{{ this.post.time }} Minute Read</div>
+          </div>
         </div>
       </div>
     </div>
@@ -79,15 +81,17 @@ export default {
   },
   methods: {
     fetchPost() {
-      axios.get(`https://freats-api-59bw.onrender.com/api/posts/${this.$route.params.id}`).then((response) => {
-        console.log(this.$route.params.id)
-        this.post = response.data
-        console.log(this.post)
-        this.date = this.post.date.substring(0, 10)
-        this.slashDate1 = this.date.replace('-', '/')
-        this.slashDate2 = this.slashDate1.replace('-', '/')
-        this.addLineBreak(this.post.content)
-      })
+      axios
+        .get(`https://freats-api-59bw.onrender.com/api/posts/${this.$route.params.id}`)
+        .then((response) => {
+          console.log(this.$route.params.id)
+          this.post = response.data
+          console.log(this.post)
+          this.date = this.post.date.substring(0, 10)
+          this.slashDate1 = this.date.replace('-', '/')
+          this.slashDate2 = this.slashDate1.replace('-', '/')
+          this.addLineBreak(this.post.content)
+        })
     },
     addLineBreak(content) {
       const blog = document.getElementById('blog-container')
@@ -105,9 +109,9 @@ export default {
         console.log(prevIndex)
         let text = ''
         if (i == 0) {
-          text = content.substring(prevIndex, index) + "\r\n" 
+          text = content.substring(prevIndex, index) + '\r\n'
         } else {
-          text = content.substring(prevIndex + 4, index) + "\r\n" 
+          text = content.substring(prevIndex + 4, index) + '\r\n'
         }
         prevIndex = index
         index = content.indexOf('2006', index + 1)
@@ -118,7 +122,7 @@ export default {
 
         const p = document.createElement('p')
         const t = document.createTextNode(text)
-        const b = document.createElement('br');
+        const b = document.createElement('br')
         p.appendChild(t)
         paraContent.appendChild(p)
         paraContent.appendChild(b)
