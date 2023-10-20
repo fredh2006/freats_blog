@@ -46,8 +46,8 @@
       </div>
     </nav>
 
-    <div class="test-container">
-      <div class="main-container">
+    <div class="test-container" id = "singlepost-container">
+      <div class="main-container" >
         <div class="container single-container">
           <div class="image-container">
             <img class="single-image" src="../../public/pilot.jpg" alt="" />

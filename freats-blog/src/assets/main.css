@@ -13,6 +13,14 @@
   font-weight: normal;
 }
 
+#main-container{
+  height: 100%;
+}
+
+#singlepost-container{
+  height: auto;
+}
+
 #left-container, #right-container{
   overflow-y:hidden;
 }
@@ -200,16 +208,25 @@
   margin-left: 3vw;
   margin-right: 3vw;
   background-color: #FFF;
-    height: 100%
+  height: 100%
 }
 
 .main-container::-webkit-scrollbar{
   display: none;
 }
 
-*::-webkit-scrollbar{
+.test-container::-webkit-scrollbar{
   display: none;
 }
+
+.test-container{
+  height: 100%;
+  overflow-y: hidden;
+}
+
+/* *::-webkit-scrollbar{
+  display: none;
+} */
 
 .latest{
   color:#1E1E1E;
@@ -441,7 +458,9 @@
 }
 
 @media(max-width: 770px){
-
+  .main-container{
+    height: auto;
+  }
   .navbar-2 .menu-items{
     width: 95%;
   }

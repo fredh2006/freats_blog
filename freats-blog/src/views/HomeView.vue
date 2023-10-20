@@ -5,7 +5,6 @@ import TheNavigation from '../components/TheNavigation.vue'
 <template>
   <div class="home-container">
     <TheNavigation />
-
     <div class="main-container columns">
       <div class="container left column">
         <h1 class="latest">Latest</h1>
