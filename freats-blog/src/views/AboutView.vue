@@ -21,7 +21,7 @@ import TheNavigation from '../components/TheNavigation.vue'
         </div>
       </div>
       <div class="container right-about column">
-        <img src="../../public/about.png" class="about-image" />
+        <img src="../../public/about.jpg" class="about-image" />
       </div>
     </div>
   </div>
