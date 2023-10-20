@@ -92,7 +92,7 @@ export default {
             const a = document.createElement('a');
 
             let img = new Image()
-            img.src = '../../public/pilot.jpg'
+            img.src = 'https://c4.wallpaperflare.com/wallpaper/35/815/822/airplane-4k-backgrounds-hd-wallpaper-preview.jpg'
 
             a.appendChild(img);
             a.href = `/posts/${this.posts[i]._id}`
