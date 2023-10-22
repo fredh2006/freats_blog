@@ -46,9 +46,14 @@
       </div>
     </nav>
 
-    <div class="main-container columns" id="main-container">
+    <!-- <div class="main-container columns" id="main-container">
       <div class="container column" id="left-container"></div>
       <div class="container column" id="right-container"></div>
+    </div> -->
+
+    <div class="main-container columns" id="posts-container">
+      <div class="column" id="c1"></div>
+      <div class="column" id="c2"></div>
     </div>
   </div>
 </template>
@@ -62,90 +67,106 @@ export default {
       posts: [],
       current_page: 1,
       records_per_page: 2,
-      cards: []
+      cards: [],
+      date: '',
+      slashDate1: '',
+      slashDate2: ''
     }
   },
   methods: {
-    fetchPosts() { 
+    click() {
+      console.log('hello')
+      this.$router.push('/posts/6531d94d0fa3f3d231200d37')
+    },
+    fetchPosts() {
       axios
         .get('https://freats-api-59bw.onrender.com/api/posts')
         .then((response) => {
           this.posts = response.data
           console.log(this.posts)
+          console.log(this.posts[0].date)
 
           for (let i = 0; i < this.posts.length; i++) {
-            const leftC = document.getElementById('left-container')
-            const rightC = document.getElementById('right-container')
-            const column = document.createElement('div')
-            column.classList.add('column')
-            column.classList.add('container')
-
+            this.date = this.posts[i].date.substring(0, 10)
+            this.slashDate1 = this.date.replace('-', '/')
+            this.slashDate2 = this.slashDate1.replace('-', '/')
+            const c1 = document.getElementById('c1')
+            const c2 = document.getElementById('c2')
             const card = document.createElement('div')
+            card.classList.add('new-post')
             card.classList.add('card')
 
             const cardImage = document.createElement('div')
+            cardImage.classList.add('new-img')
             cardImage.classList.add('card-image')
 
-            const figure = document.createElement('figure')
-            figure.classList.add('image')
-
-            const a = document.createElement('a');
-
             let img = new Image()
-            img.src = 'https://c4.wallpaperflare.com/wallpaper/35/815/822/airplane-4k-backgrounds-hd-wallpaper-preview.jpg'
+            img.src =
+              'https://c4.wallpaperflare.com/wallpaper/35/815/822/airplane-4k-backgrounds-hd-wallpaper-preview.jpg'
+            img.classList.add('preview-image')
 
-            a.appendChild(img);
-            a.href = `/posts/${this.posts[i]._id}`
+            let a = document.createElement('a')
+            a.appendChild(img)
+            a.classList.add('card-image')
+            a.href=`/posts/${this.posts[i]._id}`
 
-            figure.appendChild(a)
-            cardImage.appendChild(figure)
+            cardImage.appendChild(a)
 
             const cardContent = document.createElement('div')
             cardContent.classList.add('card-content')
 
-            const media = document.createElement('div')
-            media.classList.add('media')
-
-            const mediaContent = document.createElement('div')
-            mediaContent.classList.add('media-content')
-
-            const title = document.createElement('p')
-            title.classList.add('title')
-            title.classList.add('is-4')
+            const title = document.createElement('div')
+            title.classList.add('preview-title')
             const titleContent = document.createTextNode(this.posts[i].title)
             title.appendChild(titleContent)
 
-            const author = document.createElement('p')
-            author.classList.add('author')
-            author.classList.add('is-6')
+            const time = document.createElement('div')
+            time.classList.add('minuteread')
+            time.classList.add('metadata-text')
+            const timeContent = document.createTextNode(`${this.posts[i].time} Minute Read`)
+            time.appendChild(timeContent)
+
+            const meta = document.createElement('div')
+            meta.classList.add('namedate')
+
+            const author = document.createElement('div')
+            author.classList.add('metadata')
+            author.classList.add('metadata-text')
             const authorContent = document.createTextNode(this.posts[i].author)
             author.appendChild(authorContent)
 
+            const date = document.createElement('div')
+            date.classList.add('metadata')
+            date.classList.add('metadata-text')
+            const dateContent = document.createTextNode(this.slashDate2)
+            date.appendChild(dateContent)
+
+            meta.appendChild(author)
+            meta.appendChild(date)
+
             const para = document.createElement('div')
-            para.classList.add('content')
+            para.classList.add('preview-content')
             const paraContent = document.createTextNode(this.posts[i].firstPara)
             para.appendChild(paraContent)
 
-            mediaContent.appendChild(title)
-            mediaContent.appendChild(author)
-            media.appendChild(mediaContent)
-            cardContent.appendChild(media)
-            cardContent.appendChild(cardImage)
+            card.appendChild(cardImage)
+            cardContent.appendChild(title)
+            cardContent.appendChild(time)
+            cardContent.appendChild(meta)
             cardContent.appendChild(para)
             card.appendChild(cardContent)
-            column.appendChild(card)
 
             if (i % 2 == 0) {
-              leftC.appendChild(column)
+              c1.appendChild(card)
             } else {
-              rightC.appendChild(column)
+              c2.appendChild(card)
             }
           }
         })
         .catch((err) => {
           console.log(err)
         })
-    },
+    }
   },
   beforeMount() {
     this.fetchPosts()

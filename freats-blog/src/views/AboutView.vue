@@ -5,7 +5,7 @@ import TheNavigation from '../components/TheNavigation.vue'
 <template>
   <div class="home-container">
     <TheNavigation />
-    <div class="main-container columns">
+    <div class="main-container columns" id = "about-container">
       <div class="container left-about column">
         <div class="about-container">
           <h1 class="about-text about-title">Fred He - Me!</h1>
@@ -24,5 +24,6 @@ import TheNavigation from '../components/TheNavigation.vue'
         <img src="../../public/about.jpg" class="about-image" />
       </div>
     </div>
+    
   </div>
 </template>

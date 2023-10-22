@@ -1,10 +1,12 @@
 <script setup>
 import TheNavigation from '../components/TheNavigation.vue'
+import TheHighlightBanner from '../components/TheHighlightBanner.vue';
 </script>
 
 <template>
   <div class="home-container">
     <TheNavigation />
+    <!-- <TheHighlightBanner/> -->
     <div class="main-container columns">
       <div class="container left column">
         <h1 class="latest">Latest</h1>
@@ -14,7 +16,7 @@ import TheNavigation from '../components/TheNavigation.vue'
         </div>
         <img src="../../public/pilot.jpg" class="preview-image" />
       </div>
-      <div class="container right column">
+      <div class="container right column" id = "home-text">
         <h1 class="preview-title">Pilot</h1>
         <h1 class="preview-content">
           Do you know how all the Netflix shows you watch usually have their first episode titled

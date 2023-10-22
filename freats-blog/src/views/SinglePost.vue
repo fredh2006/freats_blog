@@ -46,7 +46,7 @@
       </div>
     </nav>
 
-    <div class="test-container" id = "singlepost-container">
+    <div class="test-container" >
       <div class="main-container" >
         <div class="container single-container">
           <div class="image-container">
