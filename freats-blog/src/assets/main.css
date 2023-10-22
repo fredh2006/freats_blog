@@ -365,6 +365,12 @@
   height: 50%;
 }
 
+.image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-content{
   padding-top: 1vh;
 }
@@ -419,11 +425,6 @@
   color: #827E7E;
 }
 
-.single-container{
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
 .single-content{
   margin-top: 2vh;
   padding-left: 175px;
@@ -470,6 +471,9 @@
 }
 
 @media(max-width: 770px){
+  .single-container{
+    margin: 0 50px;
+  }
   #home-text{
     text-align: center;
     padding: 0 45px;
