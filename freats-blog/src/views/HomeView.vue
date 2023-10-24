@@ -40,7 +40,7 @@ export default {
   methods: {
     click() {
       console.log('hello')
-      this.$router.push('/posts/653712bf0189bdbd190c77ba')
+      this.$router.push('/posts/65371d0ca441238a7fc303f4')
     }
   }
 }

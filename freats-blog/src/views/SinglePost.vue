@@ -50,7 +50,7 @@
       <div class="main-container" >
         <div class="container single-container">
           <div class="image-container">
-            <img class="single-image" src="../../public/pilot.jpg" alt="" />
+            <img id = "single-image" class="single-image" src="" alt="" />
           </div>
           <div id="blog-container">
             <h1 class="single-title">{{ this.post.title }}</h1>
@@ -76,7 +76,8 @@ export default {
       content: '',
       filler: [],
       filler1: '',
-      filler2: ''
+      filler2: '',
+      images: [],
     }
   },
   methods: {
@@ -87,13 +88,29 @@ export default {
           console.log(this.$route.params.id)
           this.post = response.data
           console.log(this.post)
+          console.log(this.post.images);
+          this.makeArray(this.post.images);
           this.date = this.post.date.substring(0, 10)
           this.slashDate1 = this.date.replace('-', '/')
           this.slashDate2 = this.slashDate1.replace('-', '/')
           this.addLineBreak(this.post.content)
         })
     },
-    addLineBreak(content) {
+    makeArray(images){
+      const previewImage = document.getElementById('single-image')
+      previewImage.src = this.post.prevImage;
+      let index = images.indexOf(',');
+      let prevIndex;
+      while(index>=0){
+        let image = '';
+        image = images.substring(prevIndex, index);
+        prevIndex = index;
+        index = images.indexOf(',', index+1);
+        this.images.push(image);
+        console.log(this.images);
+      }
+    },
+    addLineBreak(content){
       const blog = document.getElementById('blog-container')
       const paraContent = document.createElement('div')
       paraContent.classList.add('single-content')
