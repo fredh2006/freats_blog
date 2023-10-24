@@ -101,8 +101,7 @@ export default {
             cardImage.classList.add('card-image')
 
             let img = new Image()
-            img.src =
-              'https://c4.wallpaperflare.com/wallpaper/35/815/822/airplane-4k-backgrounds-hd-wallpaper-preview.jpg'
+            img.src = this.posts[i].prevImage;
             img.classList.add('preview-image')
 
             let a = document.createElement('a')
