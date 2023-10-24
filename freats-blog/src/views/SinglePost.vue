@@ -46,11 +46,11 @@
       </div>
     </nav>
 
-    <div class="test-container" >
-      <div class="main-container" >
+    <div class="test-container">
+      <div class="main-container">
         <div class="container single-container">
           <div class="image-container">
-            <img id = "single-image" class="single-image" src="" alt="" />
+            <img id="single-image" class="single-image" src="" alt="" />
           </div>
           <div id="blog-container">
             <h1 class="single-title">{{ this.post.title }}</h1>
@@ -77,7 +77,7 @@ export default {
       filler: [],
       filler1: '',
       filler2: '',
-      images: [],
+      images: []
     }
   },
   methods: {
@@ -88,29 +88,39 @@ export default {
           console.log(this.$route.params.id)
           this.post = response.data
           console.log(this.post)
-          console.log(this.post.images);
-          this.makeArray(this.post.images);
+          console.log(this.post.images)
+          this.makeArray(this.post.images)
           this.date = this.post.date.substring(0, 10)
           this.slashDate1 = this.date.replace('-', '/')
           this.slashDate2 = this.slashDate1.replace('-', '/')
           this.addLineBreak(this.post.content)
         })
     },
-    makeArray(images){
+    makeArray(images) {
       const previewImage = document.getElementById('single-image')
-      previewImage.src = this.post.prevImage;
-      let index = images.indexOf(',');
-      let prevIndex;
-      while(index>=0){
-        let image = '';
-        image = images.substring(prevIndex, index);
-        prevIndex = index;
-        index = images.indexOf(',', index+1);
-        this.images.push(image);
-        console.log(this.images);
+      previewImage.src = this.post.prevImage
+      let index = images.indexOf(',')
+      let prevIndex
+      let i = 0
+      while (index >= 0) {
+        if (i == 0) {
+          prevIndex = 0
+        }
+        let image = ''
+        if (i == 0) {
+          image = images.substring(prevIndex, index)
+        } else {
+          image = images.substring(prevIndex + 2, index)
+        }
+        prevIndex = index
+        index = images.indexOf(',', index + 1)
+        this.images.push(image)
+        console.log(this.images)
+        i++
       }
     },
-    addLineBreak(content){
+    addLineBreak(content) {
+      console.log(this.images)
       const blog = document.getElementById('blog-container')
       const paraContent = document.createElement('div')
       paraContent.classList.add('single-content')
@@ -118,6 +128,7 @@ export default {
       let index = content.indexOf('2006')
       let prevIndex
       let i = 0
+      let c = 0
 
       while (index >= 0) {
         if (i == 0) {
@@ -132,10 +143,8 @@ export default {
         }
         prevIndex = index
         index = content.indexOf('2006', index + 1)
-        i++
 
         this.filler.push(text)
-        console.log(text)
 
         const p = document.createElement('p')
         const t = document.createTextNode(text)
@@ -143,6 +152,25 @@ export default {
         p.appendChild(t)
         paraContent.appendChild(p)
         paraContent.appendChild(b)
+        if (!(c >= this.images.length)) {
+          if (this.images.length >= 1) {
+            console.log(this.images[i])
+            const imageContainer = document.createElement('div')
+            imageContainer.classList.add('singlepost-image-container')
+            const cardImage = document.createElement('div')
+            cardImage.classList.add('card-image')
+            cardImage.classList.add('singlepost-image');
+
+            let img = new Image()
+            img.src = this.images[i]
+            img.classList.add('preview-image')
+            cardImage.appendChild(img)
+            imageContainer.appendChild(cardImage)
+            paraContent.appendChild(imageContainer)
+            c++
+          }
+        }
+        i++
       }
 
       console.log(this.filler)

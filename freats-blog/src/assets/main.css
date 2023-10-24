@@ -437,6 +437,18 @@
   height: 100%;
 }
 
+.singlepost-image{
+  width: 60%;
+}
+
+.singlepost-image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+
 @media(max-width: 1360px){
   .metadata-container{
     width: 100%;
@@ -466,11 +478,17 @@
     font-size: 3vw;
   }
   .single-content{
-    padding: 0;
+    padding: 0 15px;
   }
 }
 
 @media(max-width: 770px){
+  .single-content{
+    padding: 0;
+  }
+  .singlepost-image-container{
+    padding-bottom: 0;
+  }
   .single-container{
     margin: 0 50px;
   }
