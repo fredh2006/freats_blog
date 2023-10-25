@@ -1,6 +1,6 @@
 <script setup>
 import TheNavigation from '../components/TheNavigation.vue'
-import TheHighlightBanner from '../components/TheHighlightBanner.vue';
+import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 </script>
 
 <template>
@@ -11,21 +11,19 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue';
       <div class="container left column">
         <h1 class="latest">Latest</h1>
         <div class="metadata-container">
-          <div class="metadata metadata-text">Fred He&nbsp; 2023/10/19</div>
-          <div class="date metadata-text">8 Minute Read</div>
+          <div class="metadata metadata-text">Fred He&nbsp; 2023/10/24</div>
+          <div class="date metadata-text">3 Minute Read</div>
         </div>
-        <img src="../../public/pilot.jpg" class="preview-image" />
+        <img src="../../public/pho.jpg" class="preview-image" />
       </div>
-      <div class="container right column" id = "home-text">
-        <h1 class="preview-title">Pilot</h1>
+      <div class="container right column" id="home-text">
+        <h1 class="preview-title">Review: Pho Anh Vu</h1>
         <h1 class="preview-content">
-          Do you know how all the Netflix shows you watch usually have their first episode titled
-          “Pilot”? I thought it was pretty cool until I realized it acted as an episode to evaluate
-          the show’s potential for success. Now, I wonder about all the pilot episodes I’ve never
-          seen. Anyway, I titled this post “Pilot” to mark the beginning of FREATS and have
-          something cool to look back on. TBH, I don’t need a pilot article, but I believe it would
-          be helpful to detail and outline everything I’ve planned. I know you guys are reading for
-          food content, so I’ll keep this short and sweet.
+          Now, I really wanted my first actual article to be about dumplings, but I had a delectable
+          meal over the weekend and thought that it would only be fitting to share and review it. On
+          Friday, October 20th, some buddies and I ventured over to Pho Anh Vu to get some, well,
+          you guessed it. Pho! Pho, pronounced like “fuck” when you see a teacher walk by (because
+          you know, you stop halfway), and not pronounced like “fo” in “fo sho.”
         </h1>
         <div class="button-container">
           <button class="button read-more" @click="click">Read More</button>
@@ -40,7 +38,7 @@ export default {
   methods: {
     click() {
       console.log('hello')
-      this.$router.push('/posts/65371d0ca441238a7fc303f4')
+      this.$router.push('/posts/653868cea441238a7fc3055b')
     }
   }
 }
