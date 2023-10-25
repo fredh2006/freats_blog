@@ -434,7 +434,7 @@
 #posts-container{
   padding-left: 20px;
   padding-right: 20px;
-  height: 100%;
+  height: auto;
 }
 
 .singlepost-image{
