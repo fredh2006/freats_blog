@@ -37,7 +37,6 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 export default {
   methods: {
     click() {
-      console.log('hello')
       this.$router.push('/posts/653868cea441238a7fc3055b')
     }
   }

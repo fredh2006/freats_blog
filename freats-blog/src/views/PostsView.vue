@@ -46,14 +46,9 @@
       </div>
     </nav>
 
-    <!-- <div class="main-container columns" id="main-container">
-      <div class="container column" id="left-container"></div>
-      <div class="container column" id="right-container"></div>
-    </div> -->
-
     <div class="main-container columns" id="posts-container">
-      <div class="column" id="c1"></div>
-      <div class="column" id="c2"></div>
+      <div class="column" id="left-column"></div>
+      <div class="column" id="right-column"></div>
     </div>
   </div>
 </template>
@@ -68,43 +63,46 @@ export default {
       current_page: 1,
       records_per_page: 2,
       cards: [],
-      date: '',
-      slashDate1: '',
-      slashDate2: ''
+      placeholder: '',
+      slashDate: '',
+      date: ''
     }
   },
+  
   methods: {
-    click() {
-      console.log('hello')
-      this.$router.push('/posts/6531d94d0fa3f3d231200d37')
-    },
     fetchPosts() {
       axios
         .get('https://freats-api-59bw.onrender.com/api/posts')
         .then((response) => {
           this.posts = response.data
-          console.log(this.posts)
-          console.log(this.posts[0].date)
 
+          /**
+           * loops through posts and creates a post card w/ all info
+           */
           for (let i = 0; i < this.posts.length; i++) {
-            this.date = this.posts[i].date.substring(0, 10)
-            this.slashDate1 = this.date.replace('-', '/')
-            this.slashDate2 = this.slashDate1.replace('-', '/')
-            const c1 = document.getElementById('c1')
-            const c2 = document.getElementById('c2')
-            const card = document.createElement('div')
+            //turns date format from dashes to slashes
+            this.placeholder = this.posts[i].date.substring(0, 10)
+            this.slashDate = this.placeholder.replace('-', '/')
+            this.date = this.slashDate.replace('-', '/')
+
+
+            const leftColumn = document.getElementById('left-column')
+            const rightColumn = document.getElementById('right-column')
+
+            const card = document.createElement('div') //creates actual pot
             card.classList.add('new-post')
             card.classList.add('card')
 
-            const cardImage = document.createElement('div')
+            //create posts reactively
+            const cardImage = document.createElement('div') //creates post image container
             cardImage.classList.add('new-img')
             cardImage.classList.add('card-image')
 
-            let img = new Image()
+            let img = new Image() //creates post image
             img.src = this.posts[i].prevImage;
             img.classList.add('preview-image')
 
-            let a = document.createElement('a')
+            let a = document.createElement('a') //attaches link to post on image
             a.appendChild(img)
             a.classList.add('card-image')
             a.href=`/posts/${this.posts[i]._id}`
@@ -114,12 +112,12 @@ export default {
             const cardContent = document.createElement('div')
             cardContent.classList.add('card-content')
 
-            const title = document.createElement('div')
+            const title = document.createElement('div') //creates post title
             title.classList.add('preview-title')
             const titleContent = document.createTextNode(this.posts[i].title)
             title.appendChild(titleContent)
 
-            const time = document.createElement('div')
+            const time = document.createElement('div') //creates post time
             time.classList.add('minuteread')
             time.classList.add('metadata-text')
             const timeContent = document.createTextNode(`${this.posts[i].time} Minute Read`)
@@ -128,22 +126,22 @@ export default {
             const meta = document.createElement('div')
             meta.classList.add('namedate')
 
-            const author = document.createElement('div')
+            const author = document.createElement('div') //creates post author
             author.classList.add('metadata')
             author.classList.add('metadata-text')
             const authorContent = document.createTextNode(this.posts[i].author)
             author.appendChild(authorContent)
 
-            const date = document.createElement('div')
+            const date = document.createElement('div') //creates post date
             date.classList.add('metadata')
             date.classList.add('metadata-text')
-            const dateContent = document.createTextNode(this.slashDate2)
+            const dateContent = document.createTextNode(this.date)
             date.appendChild(dateContent)
 
             meta.appendChild(author)
             meta.appendChild(date)
 
-            const para = document.createElement('div')
+            const para = document.createElement('div') //creates post intro
             para.classList.add('preview-content')
             const paraContent = document.createTextNode(this.posts[i].firstPara)
             para.appendChild(paraContent)
@@ -156,9 +154,9 @@ export default {
             card.appendChild(cardContent)
 
             if (i % 2 == 0) {
-              c1.appendChild(card)
+              leftColumn.appendChild(card)
             } else {
-              c2.appendChild(card)
+              rightColumn.appendChild(card)
             }
           }
         })

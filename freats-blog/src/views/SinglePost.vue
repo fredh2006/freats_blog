@@ -54,7 +54,7 @@
           </div>
           <div id="blog-container">
             <h1 class="single-title">{{ this.post.title }}</h1>
-            <div class="single-author">{{ this.post.author }} &nbsp; {{ this.slashDate2 }}</div>
+            <div class="single-author">{{ this.post.author }} &nbsp; {{ this.date }}</div>
             <div class="single-time">{{ this.post.time }} Minute Read</div>
           </div>
         </div>
@@ -70,13 +70,10 @@ export default {
   data() {
     return {
       post: [],
+      placeholder: '',
+      slashDate: '',
       date: '',
-      slashDate1: '',
-      slashDate2: '',
       content: '',
-      filler: [],
-      filler1: '',
-      filler2: '',
       images: []
     }
   },
@@ -85,23 +82,28 @@ export default {
       axios
         .get(`https://freats-api-59bw.onrender.com/api/posts/${this.$route.params.id}`)
         .then((response) => {
-          console.log(this.$route.params.id)
           this.post = response.data
-          console.log(this.post)
-          console.log(this.post.images)
-          this.makeArray(this.post.images)
-          this.date = this.post.date.substring(0, 10)
-          this.slashDate1 = this.date.replace('-', '/')
-          this.slashDate2 = this.slashDate1.replace('-', '/')
+          this.arrayImages(this.post.images)
+          this.placeholder = this.post.date.substring(0, 10)
+          this.slashDate = this.placeholder.replace('-', '/')
+          this.date = this.slashDate.replace('-', '/')
           this.addLineBreak(this.post.content)
         })
     },
-    makeArray(images) {
-      const previewImage = document.getElementById('single-image')
+
+    /**
+     * turns a string of images into an array of them
+     * @param {string} images string of all images attached to post
+     */
+    arrayImages(images) {
+      const previewImage = document.getElementById('single-image') //creates and sets the preview image
       previewImage.src = this.post.prevImage
+
       let index = images.indexOf(',')
       let prevIndex
       let i = 0
+
+      //seperates the images by commas and pushes them to the images array
       while (index >= 0) {
         if (i == 0) {
           prevIndex = 0
@@ -115,10 +117,14 @@ export default {
         prevIndex = index
         index = images.indexOf(',', index + 1)
         this.images.push(image)
-        console.log(this.images)
         i++
       }
     },
+
+    /**
+     * adds a line break and image after every paragraph
+     * @param {string} content content of blog post
+     */
     addLineBreak(content) {
       console.log(this.images)
       const blog = document.getElementById('blog-container')
@@ -130,6 +136,7 @@ export default {
       let i = 0
       let c = 0
 
+      //cycles through each paragraph 
       while (index >= 0) {
         if (i == 0) {
           prevIndex = 0
@@ -144,22 +151,21 @@ export default {
         prevIndex = index
         index = content.indexOf('2006', index + 1)
 
-        this.filler.push(text)
-
         const p = document.createElement('p')
         const t = document.createTextNode(text)
         const b = document.createElement('br')
         p.appendChild(t)
         paraContent.appendChild(p)
         paraContent.appendChild(b)
+
+        //cycles through each image
         if (!(c >= this.images.length)) {
           if (this.images.length >= 1) {
-            console.log(this.images[i])
             const imageContainer = document.createElement('div')
             imageContainer.classList.add('singlepost-image-container')
             const cardImage = document.createElement('div')
             cardImage.classList.add('card-image')
-            cardImage.classList.add('singlepost-image');
+            cardImage.classList.add('singlepost-image')
 
             let img = new Image()
             img.src = this.images[i]
@@ -172,18 +178,11 @@ export default {
         }
         i++
       }
-
-      console.log(this.filler)
       blog.appendChild(paraContent)
     }
   },
   beforeMount() {
     this.fetchPost()
-  },
-  computed: {
-    isUsersPath() {
-      return this.$route.path === '/posts/:id'
-    }
   }
 }
 </script>
