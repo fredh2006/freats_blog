@@ -11,19 +11,15 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
       <div class="container left column">
         <h1 class="latest">Latest</h1>
         <div class="metadata-container">
-          <div class="metadata metadata-text">Fred He&nbsp; 2023/10/24</div>
+          <div class="metadata metadata-text">Fred He&nbsp; 2023/11/12</div>
           <div class="date metadata-text">3 Minute Read</div>
         </div>
-        <img src="../../public/pho.jpg" class="preview-image" @click="click"/>
+        <img src="../../public/msg.jpg" class="preview-image" @click="click"/>
       </div>
       <div class="container right column" id="home-text">
-        <h1 class="preview-title">Review: Pho Anh Vu</h1>
+        <h1 class="preview-title">WTF is MSG?</h1>
         <h1 class="preview-content">
-          Now, I really wanted my first actual article to be about dumplings, but I had a delectable
-          meal over the weekend and thought that it would only be fitting to share and review it. On
-          Friday, October 20th, some buddies and I ventured over to Pho Anh Vu to get some, well,
-          you guessed it. Pho! Pho, pronounced like “fuck” when you see a teacher walk by (because
-          you know, you stop halfway), and not pronounced like “fo” in “fo sho.”
+          Ok, I know this article isn’t about bubble tea, but you definitely won’t regret reading it. You might have heard of MSG before, tossed around in sentences like “just put some MSG in and it’ll taste better” and “MSG is a god's gift,” but there’s a likely chance you don’t really know what it is. Not to worry, because I didn’t really know what it was either until I chose to write this article on it. 
         </h1>
         <div class="button-container">
           <button class="button read-more" @click="click">Read More</button>
@@ -37,7 +33,7 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 export default {
   methods: {
     click() {
-      this.$router.push('/posts/653868cea441238a7fc3055b')
+      this.$router.push('/posts/65515bd7a441238a7fc31958')
     }
   }
 }
