@@ -136,7 +136,7 @@ export default {
       let i = 0
       let c = 0
 
-      //cycles through each paragraph 
+      //cycles through each paragraph
       while (index >= 0) {
         if (i == 0) {
           prevIndex = 0
@@ -167,12 +167,16 @@ export default {
             cardImage.classList.add('card-image')
             cardImage.classList.add('singlepost-image')
 
-            let img = new Image()
-            img.src = this.images[i]
-            img.classList.add('preview-image')
-            cardImage.appendChild(img)
-            imageContainer.appendChild(cardImage)
-            paraContent.appendChild(imageContainer)
+            if (this.images[i] == 'none') {
+              console.log("hello")
+            } else {
+              let img = new Image()
+              img.src = this.images[i]  
+              img.classList.add('preview-image')
+              cardImage.appendChild(img)
+              imageContainer.appendChild(cardImage)
+              paraContent.appendChild(imageContainer)
+            }
             c++
           }
         }

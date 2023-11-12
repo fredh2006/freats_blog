@@ -4,7 +4,6 @@
 * {
   color: #000;
   overflow-x: hidden;
-  /*overflow-y: hidden;*/
 }
 
 #app {
@@ -210,14 +209,6 @@
     -webkit-box-sizing: padding-box;
 }
 
-/* .main-container::-webkit-scrollbar{
-  display: none;
-}
-
-.test-container::-webkit-scrollbar{
-  display: none;
-} */
-
 .test-container{
   height: auto;
   overflow-y: hidden;
@@ -385,6 +376,7 @@
   box-shadow: none;
   border: 1px solid #dadada;
   transition: box-shadow 0.5s;
+  margin-bottom: 10px;
 }
 
 .new-post:hover{
