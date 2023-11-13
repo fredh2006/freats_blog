@@ -475,6 +475,9 @@
 }
 
 @media(max-width: 770px){
+  .new-post{
+    margin-bottom: 0px;
+  }
   .single-content{
     padding: 0;
   }
