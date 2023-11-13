@@ -168,14 +168,14 @@ export default {
             cardImage.classList.add('singlepost-image')
 
             if (this.images[i] == 'none') {
-              console.log("hello")
+              console.log("hello") //if no image for paragraph, don't do anything
             } else {
               let img = new Image()
               img.src = this.images[i]  
               img.classList.add('preview-image')
               cardImage.appendChild(img)
               imageContainer.appendChild(cardImage)
-              paraContent.appendChild(imageContainer)
+              paraContent.appendChild(imageContainer) //insert image
             }
             c++
           }
