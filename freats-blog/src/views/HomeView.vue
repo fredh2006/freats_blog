@@ -14,7 +14,7 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
           <div class="metadata metadata-text">Fred He&nbsp; 2023/11/20</div>
           <div class="date metadata-text">4 Minute Read</div>
         </div>
-        <img src="../../public/msg.jpg" class="preview-image" @click="click" />
+        <img src="../../public/raku.jpg" class="preview-image" @click="click" />
       </div>
       <div class="container right column" id="home-text">
         <h1 class="preview-title">Review: Raku</h1>
