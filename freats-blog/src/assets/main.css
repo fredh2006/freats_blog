@@ -429,10 +429,6 @@
   height: auto;
 }
 
-.singlepost-image{
-  width: 60%;
-}
-
 .singlepost-image-container{
   display: flex;
   justify-content: center;
