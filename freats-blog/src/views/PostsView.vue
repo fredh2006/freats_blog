@@ -79,7 +79,7 @@ export default {
           /**
            * loops through posts and creates a post card w/ all info
            */
-          for (let i = 0; i < this.posts.length; i++) {
+          for (let i = this.posts.length-1; i >= 0; i--) {
             //turns date format from dashes to slashes
             this.placeholder = this.posts[i].date.substring(0, 10)
             this.slashDate = this.placeholder.replace('-', '/')
@@ -154,9 +154,9 @@ export default {
             card.appendChild(cardContent)
 
             if (i % 2 == 0) {
-              leftColumn.appendChild(card)
-            } else {
               rightColumn.appendChild(card)
+            } else {
+              leftColumn.appendChild(card)
             }
           }
         })
