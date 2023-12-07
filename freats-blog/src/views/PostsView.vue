@@ -76,11 +76,14 @@ export default {
         .then((response) => {
           this.posts = response.data
 
+          let postCount = 0;
+
           /**
            * loops through posts and creates a post card w/ all info
            */
           for (let i = this.posts.length-1; i >= 0; i--) {
             //turns date format from dashes to slashes
+
             this.placeholder = this.posts[i].date.substring(0, 10)
             this.slashDate = this.placeholder.replace('-', '/')
             this.date = this.slashDate.replace('-', '/')
@@ -153,11 +156,13 @@ export default {
             cardContent.appendChild(para)
             card.appendChild(cardContent)
 
-            if (i % 2 == 0) {
-              rightColumn.appendChild(card)
-            } else {
+            if (postCount % 2 == 0) {
               leftColumn.appendChild(card)
+            } else {
+              rightColumn.appendChild(card)
             }
+            postCount++;
+
           }
         })
         .catch((err) => {

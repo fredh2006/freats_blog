@@ -11,19 +11,20 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
       <div class="container left column">
         <h1 class="latest">Latest</h1>
         <div class="metadata-container">
-          <div class="metadata metadata-text">Fred He&nbsp; 2023/11/20</div>
-          <div class="date metadata-text">4 Minute Read</div>
+          <div class="metadata metadata-text">Fred He&nbsp; 2023/12/06</div>
+          <div class="date metadata-text">5 Minute Read</div>
         </div>
-        <img src="../../public/raku.jpg" class="preview-image" @click="click" />
+        <img src="../../public/eggs.jpg" class="preview-image" @click="click" />
       </div>
       <div class="container right column" id="home-text">
-        <h1 class="preview-title">Review: Raku</h1>
+        <h1 class="preview-title">100 Ways to Cook an Egg</h1>
         <h1 class="preview-content">
-          With a stark contrast to its simple and unassuming exterior, Raku serves dishes that
-          explode and burst with flavour. This duality, along with the modern and minimalistic
-          interior, created a satisfying and mellow experience. On Saturday, November 18th, I made
-          my way to downtown Toronto, through the TTC and crackhead-filled streets, to visit Raku, a
-          restaurant serving authentic Japanese udon.
+          Commonly associated with chefs in combination with a white coat is a tall, white hat. This
+          pleated hat is officially referred to as a toque, the Arabic word for hat. If you look
+          closely, or at all, at a chef’s hat, you’ll notice numerous folds and pleats in it. In the
+          early days of the toque, people said that the number of pleats represented the number of
+          techniques a chef had achieved. Often, there were 100 pleats, which indicates the more
+          than a hundred ways of cooking an egg.
         </h1>
         <div class="button-container">
           <button class="button read-more" @click="click">Read More</button>
@@ -37,7 +38,7 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 export default {
   methods: {
     click() {
-      this.$router.push('/posts/655c3659a441238a7fc3222f')
+      this.$router.push('/posts/65714f598781241967c452ef')
     }
   }
 }
