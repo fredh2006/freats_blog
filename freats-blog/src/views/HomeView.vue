@@ -12,19 +12,19 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
         <h1 class="latest">Latest</h1>
         <div class="metadata-container">
           <div class="metadata metadata-text">Fred He&nbsp; 2023/12/06</div>
-          <div class="date metadata-text">5 Minute Read</div>
+          <div class="date metadata-text">2 Minute Read</div>
         </div>
-        <img src="../../public/eggs.jpg" class="preview-image" @click="click" />
+        <img src="../../public/letter.png" class="preview-image" @click="click" />
       </div>
       <div class="container right column" id="home-text">
-        <h1 class="preview-title">100 Ways to Cook an Egg</h1>
+        <h1 class="preview-title">A Love Letter to Chipotle</h1>
         <h1 class="preview-content">
-          Commonly associated with chefs in combination with a white coat is a tall, white hat. This
-          pleated hat is officially referred to as a toque, the Arabic word for hat. If you look
-          closely, or at all, at a chef’s hat, you’ll notice numerous folds and pleats in it. In the
-          early days of the toque, people said that the number of pleats represented the number of
-          techniques a chef had achieved. Often, there were 100 pleats, which indicates the more
-          than a hundred ways of cooking an egg.
+          I love Chipotle. I mean that from the very bottom of my heart. This love, however, isn’t
+          superficial; it truly stems from the bottom of my heart. Through difficult times, I eat
+          Chipotle. Through joyful times, I eat Chipotle. Through confusing times, I eat Chipotle. I
+          sincerely love eating Chipotle. Now, this may seem like a one-sided relationship with
+          Chipotle not reciprocating back, but I see it differently when Chipotle hands me a bowl
+          piled high with food
         </h1>
         <div class="button-container">
           <button class="button read-more" @click="click">Read More</button>
@@ -38,7 +38,7 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 export default {
   methods: {
     click() {
-      this.$router.push('/posts/65714f598781241967c452ef')
+      this.$router.push('/posts/6587911128276bee86975b85')
     }
   }
 }
