@@ -1,1 +1,1 @@
-# freats_blog
+Source code for Freats blog
