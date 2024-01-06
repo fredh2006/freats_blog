@@ -68,26 +68,25 @@ export default {
       date: ''
     }
   },
-  
+
   methods: {
-    fetchPosts() {
+  fetchPosts() {
       axios
         .get('https://freats-api-59bw.onrender.com/api/posts')
         .then((response) => {
           this.posts = response.data
 
-          let postCount = 0;
+          let postCount = 0
 
           /**
            * loops through posts and creates a post card w/ all info
            */
-          for (let i = this.posts.length-1; i >= 0; i--) {
+          for (let i = this.posts.length - 1; i >= 0; i--) {
             //turns date format from dashes to slashes
 
             this.placeholder = this.posts[i].date.substring(0, 10)
             this.slashDate = this.placeholder.replace('-', '/')
             this.date = this.slashDate.replace('-', '/')
-
 
             const leftColumn = document.getElementById('left-column')
             const rightColumn = document.getElementById('right-column')
@@ -102,13 +101,13 @@ export default {
             cardImage.classList.add('card-image')
 
             let img = new Image() //creates post image
-            img.src = this.posts[i].prevImage;
+            img.src = this.posts[i].prevImage
             img.classList.add('preview-image')
 
             let a = document.createElement('a') //attaches link to post on image
             a.appendChild(img)
             a.classList.add('card-image')
-            a.href=`/posts/${this.posts[i]._id}`
+            a.href = `/posts/${this.posts[i]._id}`
 
             cardImage.appendChild(a)
 
@@ -161,8 +160,7 @@ export default {
             } else {
               rightColumn.appendChild(card)
             }
-            postCount++;
-
+            postCount++
           }
         })
         .catch((err) => {

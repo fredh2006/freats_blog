@@ -11,20 +11,19 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
       <div class="container left column">
         <h1 class="latest">Latest</h1>
         <div class="metadata-container">
-          <div class="metadata metadata-text">Fred He&nbsp; 2023/12/06</div>
-          <div class="date metadata-text">2 Minute Read</div>
+          <div class="metadata metadata-text">Fred He&nbsp; 2023/1/06</div>
+          <div class="date metadata-text">3 Minute Read</div>
         </div>
-        <img src="../../public/letter.png" class="preview-image" @click="click" />
+        <img src="../../public/michelin.jpg" class="preview-image" @click="click" />
       </div>
       <div class="container right column" id="home-text">
-        <h1 class="preview-title">A Love Letter to Chipotle</h1>
+        <h1 class="preview-title">A Guide to the Michelin Guide </h1>
         <h1 class="preview-content">
-          I love Chipotle. I mean that from the very bottom of my heart. This love, however, isn’t
-          superficial; it truly stems from the bottom of my heart. Through difficult times, I eat
-          Chipotle. Through joyful times, I eat Chipotle. Through confusing times, I eat Chipotle. I
-          sincerely love eating Chipotle. Now, this may seem like a one-sided relationship with
-          Chipotle not reciprocating back, but I see it differently when Chipotle hands me a bowl
-          piled high with food
+          No, this article isn’t about that big, white, bubbly, and lowkey creepy Michelin man
+          (sorry, not sorry). Instead, it’s about something else with an odd relationship to this
+          French tire company. The Michelin stars. The widely renowned and recognized term Michelin
+          stars is actually part of the Michelin Guides, a series of guidebooks that Michelin has
+          published and consistently updated since 1900.
         </h1>
         <div class="button-container">
           <button class="button read-more" @click="click">Read More</button>
@@ -38,7 +37,7 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 export default {
   methods: {
     click() {
-      this.$router.push('/posts/6587911128276bee86975b85')
+      this.$router.push('/posts/6599e113279b11b5f4a9dba9')
     }
   }
 }
