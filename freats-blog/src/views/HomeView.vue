@@ -14,10 +14,10 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
           <div class="metadata metadata-text">Fred He&nbsp; 2024/4/3</div>
           <div class="date metadata-text">4 Minute Read</div>
         </div>
-        <img src="../../public/amal.jpg" class="preview-image" @click="click" />
+        <img src="../../public/amal.png" class="preview-image" @click="click" />
       </div>
       <div class="container right column" id="home-text">
-        <h1 class="preview-title">The Evolution of Street Food</h1>
+        <h1 class="preview-title">Review: Amal</h1>
         <h1 class="preview-content">
           No one told me Amal was a Michelin-recommended restaurant, so I must say, when I showed up
           in joggers and a sweater, I felt a tad bit underdressed. A clean, cozy, and sleek
@@ -37,7 +37,7 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 export default {
   methods: {
     click() {
-      this.$router.push('/posts/660e2445638de5f577a3bbf2')
+      this.$router.push('/posts/660e2739638de5f577a3bc09')
     }
   }
 }
