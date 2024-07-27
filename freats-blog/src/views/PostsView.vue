@@ -72,7 +72,7 @@ export default {
   methods: {
   fetchPosts() {
       axios
-        .get('https://freats-api-59bw.onrender.com/api/posts')
+        .get('https://freats-api.onrender.com/api/posts')
         .then((response) => {
           this.posts = response.data
 

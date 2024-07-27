@@ -11,23 +11,20 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
       <div class="container left column">
         <h1 class="latest">Latest</h1>
         <div class="metadata-container">
-          <div class="metadata metadata-text">Fred He&nbsp; 2024/6/7</div>
-          <div class="date metadata-text">2 Minute Read</div>
+          <div class="metadata metadata-text">Fred He&nbsp; 2024/7/26</div>
+          <div class="date metadata-text">5 Minute Read</div>
         </div>
-        <img src="../../public/crust.png" class="preview-image" @click="click" />
+        <img src="../../public/korea.jpg" class="preview-image" @click="click" />
       </div>
       <div class="container right column" id="home-text">
-        <h1 class="preview-title">What the Crust</h1>
+        <h1 class="preview-title">Review: Korea</h1>
         <h1 class="preview-content">
-          Thick. Thin. Deep-Dish. Stuffed? No, I’m not talking about women. I’m talking about pizza!
-          While I’m far from what many would call a pizza connoisseur, I definitely do enjoy a slice
-          from time to time. Now, everyone knows that pizzas have a near-unlimited amount of
-          customization, whether it’s the variety of toppings, the crust, or even the way it’s cut.
-          The crust, in my opinion, is the most integral part of the pizza. Its role as the
-          foundation is essential to the success and tastiness of the slice. Everyone has different
-          opinions when it comes to pizza crusts, but I’m not here to argue for one crust in
-          particular (thin crust ftw). I’m here to enjoy and appreciate all the different types of
-          crust.
+          I know. I know. Much to everyone’s dismay, there hasn’t been a FREATS post in a quite a
+          while. With school over and summer well underway, I haven’t touched a task that’s required
+          brainpower – so much so that I even escaped abroad for 2 weeks. I spent these past 2 weeks
+          exploring the streets of Korea and Japan, soaking in sites and devouring some dishes. Both
+          these countries are so culturally and historically rich, with beautiful palaces, sprawling
+          nature, and bustling streets; but obviously, I’m here to discuss food.
         </h1>
         <div class="button-container">
           <button class="button read-more" @click="click">Read More</button>
@@ -41,7 +38,7 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 export default {
   methods: {
     click() {
-      this.$router.push('/posts/66636d28cc9f811148dcfe62')
+      this.$router.push('/posts/66a45ba85fa517ce0a39a158')
     }
   }
 }

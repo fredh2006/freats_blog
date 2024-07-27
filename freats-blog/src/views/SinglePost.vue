@@ -80,7 +80,7 @@ export default {
   methods: {
     fetchPost() {
       axios
-        .get(`https://freats-api-59bw.onrender.com/api/posts/${this.$route.params.id}`)
+        .get(`https://freats-api.onrender.com/api/posts/${this.$route.params.id}`)
         .then((response) => {
           this.post = response.data
           this.arrayImages(this.post.images)
@@ -118,6 +118,7 @@ export default {
         index = images.indexOf(',', index + 1)
         this.images.push(image)
         i++
+        console.log(image)
       }
     },
 
@@ -141,7 +142,6 @@ export default {
         if (i == 0) {
           prevIndex = 0
         }
-        console.log(prevIndex)
         let text = ''
         if (i == 0) {
           text = content.substring(prevIndex, index) + '\r\n'
