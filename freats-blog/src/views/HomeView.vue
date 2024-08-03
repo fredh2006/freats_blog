@@ -11,20 +11,19 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
       <div class="container left column">
         <h1 class="latest">Latest</h1>
         <div class="metadata-container">
-          <div class="metadata metadata-text">Fred He&nbsp; 2024/7/26</div>
-          <div class="date metadata-text">5 Minute Read</div>
+          <div class="metadata metadata-text">Fred He&nbsp; 2024/8/2</div>
+          <div class="date metadata-text">4 Minute Read</div>
         </div>
-        <img src="../../public/korea.jpg" class="preview-image" @click="click" />
+        <img src="../../public/japan.jpg" class="preview-image" @click="click" />
       </div>
       <div class="container right column" id="home-text">
-        <h1 class="preview-title">Review: Korea</h1>
+        <h1 class="preview-title">Review: Japan</h1>
         <h1 class="preview-content">
-          I know. I know. Much to everyone’s dismay, there hasn’t been a FREATS post in a quite a
-          while. With school over and summer well underway, I haven’t touched a task that’s required
-          brainpower – so much so that I even escaped abroad for 2 weeks. I spent these past 2 weeks
-          exploring the streets of Korea and Japan, soaking in sites and devouring some dishes. Both
-          these countries are so culturally and historically rich, with beautiful palaces, sprawling
-          nature, and bustling streets; but obviously, I’m here to discuss food.
+          Only a short 2-hour flight from Korea, Japan was the next stop of our trip. I thought
+          Korea was hot, so words won’t be able to describe what Japan was like. It’s like I was a
+          big fat steak being thrown onto a searing hot cast iron and right as I thought I was
+          finished; they threw me into an oven at 400 degrees. Despite being cooked alive most days,
+          I got to enjoy some great cooking from Japan’s chefs as well, not just the weather.
         </h1>
         <div class="button-container">
           <button class="button read-more" @click="click">Read More</button>
@@ -38,7 +37,7 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 export default {
   methods: {
     click() {
-      this.$router.push('/posts/66a45ba85fa517ce0a39a158')
+      this.$router.push('/posts/66ad7fe0de845afb0cef7f9a')
     }
   }
 }
