@@ -10,7 +10,7 @@ import TheNavigation from '../components/TheNavigation.vue'
         <div class="about-container">
           <h1 class="about-text about-title">Fred He - Me!</h1>
           <h1 class="about-text about-content">
-            H! I’m Fred He, and I’m currently a grade 12 student. When I’m not stressing over school
+            H! I’m Fred He, and I’m currently a first year university student. When I’m not stressing over school
             or studying for tests, you can find me in the kitchen, stuffing my face with whatever I
             can find. Throughout the entirety of my life, food has been an utmost importance to me,
             as it’s not only delicious and mouth-watering, but acts as a way for me to connect with
