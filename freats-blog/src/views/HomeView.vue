@@ -27,7 +27,8 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
           to ease into a routine I enjoy. Although I go to university close to home and have the
           blessing of going back every week, I still feel homesick and crave the warmth of the
           dinner table at home. For any university student reading and experiencing this, I’ve found
-          that one of the best things you can do is eat food that reminds you of home.
+          that one of the best things you can do is eat food that reminds you of home. I'm here
+          today to share some of my favourite dishes.
         </h1>
         <div class="button-container">
           <button class="button read-more" @click="click">Read More</button>
@@ -41,7 +42,7 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 export default {
   methods: {
     click() {
-      this.$router.push('/posts/670066f1c021bc454142a07b')
+      this.$router.push('/posts/6701ba7dc021bc454142a088')
     }
   }
 }
