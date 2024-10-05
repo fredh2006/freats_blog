@@ -11,19 +11,23 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
       <div class="container left column">
         <h1 class="latest">Latest</h1>
         <div class="metadata-container">
-          <div class="metadata metadata-text">Fred He&nbsp; 2024/8/2</div>
-          <div class="date metadata-text">4 Minute Read</div>
+          <div class="metadata metadata-text">Fred He&nbsp; 2024/10/4</div>
+          <div class="date metadata-text">3 Minute Read</div>
         </div>
-        <img src="../../public/japan.jpg" class="preview-image" @click="click" />
+        <img src="../../public/uoft.jpeg" class="preview-image" @click="click" />
       </div>
       <div class="container right column" id="home-text">
-        <h1 class="preview-title">Review: Japan</h1>
+        <h1 class="preview-title">Dishes that Remind me of Home</h1>
         <h1 class="preview-content">
-          Only a short 2-hour flight from Korea, Japan was the next stop of our trip. I thought
-          Korea was hot, so words won’t be able to describe what Japan was like. It’s like I was a
-          big fat steak being thrown onto a searing hot cast iron and right as I thought I was
-          finished; they threw me into an oven at 400 degrees. Despite being cooked alive most days,
-          I got to enjoy some great cooking from Japan’s chefs as well, not just the weather.
+          Wow. It feels like I haven’t written an article in the longest time, which is partially
+          true. Ever since I got back from my East-Asian country crawl (only 2 countries lol!), I
+          went to explore the stunning scenery of Banff and pack my bags for university. As a
+          freshman in university, the transition from high school to university isn’t simple at all.
+          There’s such a drastic difference whether it’d be socially or academically, but I’ve begun
+          to ease into a routine I enjoy. Although I go to university close to home and have the
+          blessing of going back every week, I still feel homesick and crave the warmth of the
+          dinner table at home. For any university student reading and experiencing this, I’ve found
+          that one of the best things you can do is eat food that reminds you of home.
         </h1>
         <div class="button-container">
           <button class="button read-more" @click="click">Read More</button>
@@ -37,7 +41,7 @@ import TheHighlightBanner from '../components/TheHighlightBanner.vue'
 export default {
   methods: {
     click() {
-      this.$router.push('/posts/66ad7fe0de845afb0cef7f9a')
+      this.$router.push('/posts/670066f1c021bc454142a07b')
     }
   }
 }
